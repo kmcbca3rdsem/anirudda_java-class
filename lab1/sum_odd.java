@@ -11,7 +11,7 @@ public class sum_odd {
             }
         }
 
-        System.out.println("The sum of odd numbers from 1 to " + n + " is: " + sum);
+        System.out.println("The sum" + n + " is: " + sum);
     }
     
 }

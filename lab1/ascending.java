@@ -26,7 +26,7 @@ public class ascending {
             }
         }
 
-        System.out.println("Numbers in Ascending Order:");
+        System.out.println("Ascending Order:");
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
