@@ -4,45 +4,55 @@ import java.awt.event.*;
 
 public class CalculatorFrame extends Frame implements ActionListener {
 
-    TextField t1, t2, result;
-    Button add, sub, mul, div;
+    TextField display;
+    Button b[] = new Button[10];
+    Button add, sub, mul, div, equal, clear;
+
+    double num1 = 0, num2 = 0, result = 0;
+    char operator;
 
     CalculatorFrame() {
-        setTitle("Simple Calculator");
-        setSize(300, 250);
-        setLayout(new FlowLayout());
 
-        Label l1 = new Label("First Number:");
-        Label l2 = new Label("Second Number:");
-        Label l3 = new Label("Result:");
+        setTitle("Phone Calculator");
+        setSize(300, 400);
+        setLayout(new BorderLayout());
 
-        t1 = new TextField(15);
-        t2 = new TextField(15);
-        result = new TextField(15);
-        result.setEditable(false);
+        display = new TextField();
+        display.setEditable(false);
+        display.setFont(new Font("Arial", Font.BOLD, 20));
+        add(display, BorderLayout.NORTH);
 
-        add = new Button("Add");
-        sub = new Button("Subtract");
-        mul = new Button("Multiply");
-        div = new Button("Divide");
+        Panel p = new Panel();
+        p.setLayout(new GridLayout(5,4));
 
-        add(l1); add(t1);
-        add(l2); add(t2);
+        for(int i=0;i<=9;i++) {
+            b[i] = new Button(String.valueOf(i));
+            b[i].addActionListener(this);
+        }
 
-        add(add);
-        add(sub);
-        add(mul);
-        add(div);
-
-        add(l3); add(result);
+        add = new Button("+");
+        sub = new Button("-");
+        mul = new Button("*");
+        div = new Button("/");
+        equal = new Button("=");
+        clear = new Button("C");
 
         add.addActionListener(this);
         sub.addActionListener(this);
         mul.addActionListener(this);
         div.addActionListener(this);
+        equal.addActionListener(this);
+        clear.addActionListener(this);
 
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent we) {
+        p.add(b[7]); p.add(b[8]); p.add(b[9]); p.add(div);
+        p.add(b[4]); p.add(b[5]); p.add(b[6]); p.add(mul);
+        p.add(b[1]); p.add(b[2]); p.add(b[3]); p.add(sub);
+        p.add(b[0]); p.add(clear); p.add(equal); p.add(add);
+
+        add(p, BorderLayout.CENTER);
+
+        addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent we){
                 System.exit(0);
             }
         });
@@ -51,23 +61,38 @@ public class CalculatorFrame extends Frame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        double num1 = Double.parseDouble(t1.getText());
-        double num2 = Double.parseDouble(t2.getText());
-        double res = 0;
 
-        if (e.getSource() == add)
-            res = num1 + num2;
-        else if (e.getSource() == sub)
-            res = num1 - num2;
-        else if (e.getSource() == mul)
-            res = num1 * num2;
-        else if (e.getSource() == div)
-            res = num1 / num2;
+        String s = e.getActionCommand();
 
-        result.setText(String.valueOf(res));
+        if(s.charAt(0) >= '0' && s.charAt(0) <= '9') {
+            display.setText(display.getText() + s);
+        }
+
+        else if(s.equals("C")) {
+            display.setText("");
+        }
+
+        else if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")) {
+            num1 = Double.parseDouble(display.getText());
+            operator = s.charAt(0);
+            display.setText("");
+        }
+
+        else if(s.equals("=")) {
+            num2 = Double.parseDouble(display.getText());
+
+            switch(operator) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num1 / num2; break;
+            }
+
+            display.setText(String.valueOf(result));
+        }
     }
 
-    public static void main(String[] args) {
-        new CalculatorFrame();
+    public static void main(String args[]) {
+        new Calculator();
     }
 }
