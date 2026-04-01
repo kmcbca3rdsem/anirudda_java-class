@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class q11 {
+public class Calculator {
     public static void main(String[] args) {
         JFrame f = new JFrame("Calculator");
         f.setSize(300, 300);
