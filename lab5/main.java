@@ -1,5 +1,5 @@
 package lab5;
-public class main(String[] args) {
+class main(String[] args) {
     int a = 10;
     int b = 20;
     int c = 30;
