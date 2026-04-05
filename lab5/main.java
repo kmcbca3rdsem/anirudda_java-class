@@ -1,6 +1,7 @@
 package lab5;
-class main(String[] args) {
-    int a = 10;
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
     int b = 20;
     int c = 30;
     if (a > b && a > c) {
@@ -9,5 +10,6 @@ class main(String[] args) {
         System.out.println("b is the largest number");
     } else {
         System.out.println("c is the largest number");
+    }
     }
 }
