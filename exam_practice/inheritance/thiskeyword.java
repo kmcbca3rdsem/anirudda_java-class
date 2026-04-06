@@ -1,25 +1,27 @@
 package exam_practice.inheritance;
-class Person{
+class Anup{
+    int a;
     String name;
-    int age;
+    Anup(int a,String name){
+        this.a = a;
+        this.name = name;
 
-    Person(String name, int age) {
-        this.name = name; // 'this' refers to the current object's name
-        this.age = age;   // 'this' refers to the current object's age
+
+    }
+    void show(){
+        System.err.println(this.a);
+        System.err.println(this.name);
     }
 
-    void display() {
-        System.out.println("Name: " + this.name); // Using 'this' to access instance variable
-        System.out.println("Age: " + this.age);   // Using 'this' to access instance variable
-    }
 
 }
 public class thiskeyword {
     public static void main(String[] args) {
-        // Example of using 'this' keyword
-        Person p = new Person("Alice", 30);
-        p.display();
+    
+    Anup a = new Anup(12,"ani");
+    a.show();
     }
+
 
     
 }
