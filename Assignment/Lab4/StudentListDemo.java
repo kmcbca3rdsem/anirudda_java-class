@@ -6,7 +6,7 @@ public class StudentListDemo {
     public static void main(String[] args) {
         ArrayList<String> students = new ArrayList<>();
 
-        students.add("Alex");
+        students.add("Rohit");
         students.add("Dipesh");
         students.add("Supreme");
         students.add("Aniruddha");

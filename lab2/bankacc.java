@@ -11,6 +11,7 @@ public class bankacc {
         this.balance = balance;
     }
 
+
     public void deposit(double amount) {
         balance += amount;
         System.out.println("Deposited: " + amount);

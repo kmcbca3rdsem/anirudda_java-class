@@ -33,12 +33,12 @@ public class TicketBookingDemo {
         TicketBooking booking = new TicketBooking();
 
         CustomerThread t1,t2,t3,t4,t5,t6;
-                t1 = new CustomerThread(booking, "Alex");
+                t1 = new CustomerThread(booking, "Rohit");
          t2 = new CustomerThread(booking, "Aniruddha");
          t3 = new CustomerThread(booking, "Supreme");
          t4 = new CustomerThread(booking, "Dipesh");
          t5 = new CustomerThread(booking, "Aayushma");
-         t6 = new CustomerThread(booking, "Bisuda");
+         t6 = new CustomerThread(booking, "aayushman");
 
         t1.start();
         t2.start();

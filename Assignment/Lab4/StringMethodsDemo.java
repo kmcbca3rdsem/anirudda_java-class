@@ -2,7 +2,7 @@ package Assignment.Lab4;
 
 public class StringMethodsDemo {
     public static void main(String[] args) {
-        String text = "Rohit Shah";
+        String text = "Anirudda Rai";
 
         int length = text.length();
         System.out.println("Length of the string: " + length);
