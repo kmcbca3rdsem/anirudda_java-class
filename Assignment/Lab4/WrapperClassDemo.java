@@ -1,6 +1,4 @@
-package Assignment.Lab4;
-
-public class WrapperClassDemo {
+package Assignment.Lab4;public class WrapperClassDemo {
     public static void main(String[] args) {
         int num = 42;
         Integer integerNum = Integer.valueOf(num);  // or Integer num = num; (Autoboxing)
