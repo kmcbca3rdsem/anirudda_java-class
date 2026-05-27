@@ -5,8 +5,7 @@ class student{
     String name;
     void input(){
         System.out.println("enter the roll and name:");
-    }
-}
+    }}
 class ankit extends student{
     void disp(){
         roll = 1;
