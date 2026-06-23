@@ -1,30 +1,21 @@
 package practile1;
-
 import java.util.Scanner;
-
 public class q5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter size of array: ");
         int n = sc.nextInt();
-
         int[] arr = new int[n];
         int[] even = new int[n];
         int[] odd = new int[n];
-
         int e = 0, o = 0;
-
         System.out.println("Enter elements:");
         for(int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-
-            if(arr[i] % 2 == 0) {
+           if(arr[i] % 2 == 0) {
                 even[e++] = arr[i];
             } else {
-                odd[o++] = arr[i];
-            }
-        }
+                odd[o++] = arr[i];}}
 
         System.out.println("Even numbers:");
         for(int i = 0; i < e; i++) {
