@@ -1,7 +1,7 @@
 package kakashi;
 
 import java.util.*;
-public class q1 {
+public class q2 {
     static void result(int[] marks) {
         int sum = 0;
         for(int m : marks) sum += m;
